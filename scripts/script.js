@@ -21,7 +21,7 @@ function addTask() {
 function createCompleteButton() {
 	const completeButton = document.createElement('button');
 	completeButton.textContent = 'Complete';
-	completeButton.className = 'complete_button';
+	completeButton.className = 'complete_button btn btn-success';
 	completeButton.addEventListener('click', function() {
 		const listItem = completeButton.parentElement;
 		listItem.remove();
