@@ -10,8 +10,25 @@ function addTask() {
 		const listItem = document.createElement('li');
 		listItem.textContent = task;
 		const toDoList = document.querySelector('#to_do_list');
+		listItem.prepend(createCompleteButton());
 		toDoList.appendChild(listItem);
 	}
+}
+
+function completeTask() {
+	// Filler code.
+	alert('Task completed!');
+}
+
+/*
+ * Create a button that resides with the task it was created with.
+ */
+function createCompleteButton() {
+	const completeButton = document.createElement('button');
+	completeButton.textContent = 'Complete';
+	completeButton.className = 'complete_button';
+	completeButton.addEventListener('click', completeTask);
+	return completeButton;
 }
 
 const addTaskButton = document.querySelector('#add_task_button');
