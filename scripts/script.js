@@ -15,11 +15,6 @@ function addTask() {
 	}
 }
 
-function completeTask() {
-	// Filler code.
-	alert('Task completed!');
-}
-
 /*
  * Create a button that resides with the task it was created with.
  */
@@ -27,7 +22,10 @@ function createCompleteButton() {
 	const completeButton = document.createElement('button');
 	completeButton.textContent = 'Complete';
 	completeButton.className = 'complete_button';
-	completeButton.addEventListener('click', completeTask);
+	completeButton.addEventListener('click', function() {
+		const listItem = completeButton.parentElement;
+		listItem.remove();
+	});
 	return completeButton;
 }
 
