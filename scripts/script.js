@@ -16,16 +16,20 @@ function addTask() {
 }
 
 /*
+ * Removes a task from the list.
+ */
+function removeTask(button) {
+	button.parentElement.remove();
+}
+
+/*
  * Create a button that resides with the task it was created with.
  */
 function createCompleteButton() {
 	const completeButton = document.createElement('button');
 	completeButton.textContent = 'Complete';
 	completeButton.className = 'complete_button btn btn-success';
-	completeButton.addEventListener('click', function() {
-		const listItem = completeButton.parentElement;
-		listItem.remove();
-	});
+	completeButton.addEventListener('click', () => removeTask(completeButton));
 	return completeButton;
 }
 
